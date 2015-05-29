@@ -2,14 +2,17 @@
 
 <ul>
     <% @services.each do |service| %>
-        <li><%= service.name %></li>
-        <li><%= service.description %></li>
-        <li><%= image_tag(service.picture, :class => 'picture') %></li>
-        <li><%= number_with_precision(service.price, :precision => 2) %></li>
-        <li><%= service.seller_id %></li>
-        <li><%= service.category_id %></li>
+        <li>Service Id: <%= service.id %></li>
+        <li>Service Name: <%= service.name %></li>
+        <li>Service Description: <%= service.description %></li>
+        <li>Service Cost: <%= number_to_currency(service.price, :precision => 2) %></li>
+        <li>Seller ID: <%= service.seller_id %></li>
+        <li>Service Category: <%= service.category_id %></li>
+        <p></p>
+        <p><%= link_to "More info", service_path(service) %></p>
         
-        <%= link_to "Don't want to do this anymore!", services_path, method: :delete, data: { confirm: "Are you sure you want to delete this service?"} %>
-
     <% end %>
 </ul>
+
+<p><%= link_to "Make a new service", new_service_path%></p>
+<p><%= link_to "Link To Categories", categories_path%></p>

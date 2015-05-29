@@ -1,0 +1,16 @@
+<h1>Categories List</h1>
+
+<ul>
+    <% @categories.each do |category| %>
+    	<li>Category Id: <%= category.id %></li>
+        <li>Category Name: <%= category.name %></li>
+        <li>Category Description: <%= category.description %></li>
+        <p></p>
+        <p><%= link_to "More info", category_path(category) %></p>
+        
+
+    <% end %>
+</ul>
+
+<p><%= link_to "Create a new category", new_category_path%></p>
+<p><%= link_to "Back to services list", services_path%></p>

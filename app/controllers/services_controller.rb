@@ -12,34 +12,40 @@ class ServicesController < ApplicationController
   		@service = Service.new
 	end
 
-	def create
-  		@service = Service.new(params.require(:service).permit(:name, :description, :picture, :price, :category_id))
-
-  		if @service.save
-    		redirect_to services_path
-  		else
-    		render :new
-  		end
-	end
-
 	def edit
   		@service = Service.find(params[:id])
-	end
+	
+  end
+  def create
+    @service = Service.new(service_params) 
 
-	def update
-  		@service = Service.find(params[:id])
+    if @service.save
+      redirect_to :services
+    else
+      render :new
+    end
+  end
 
-  		if @service.update_attributes(params.require(:service).permit(:name, :description, :picture, :price, :category_id))
-   			redirect_to services_path
-  		else
-    		render :edit
-  		end
-	end
+  def update
+    @service = Service.find(params[:id])
+
+    if @service.update_attributes(service_params) 
+      redirect_to :services
+    else
+      render :edit
+    end
+  end
 
 	def destroy
   		@service = Service.find(params[:id])
   		@service.destroy
   		redirect_to services_path
 	end
+
+  private
+  
+  def service_params
+    params.require(:service).permit(:name, :description, :picture, :price, :category_id, :text, :seller_id)
+  end
 
 end

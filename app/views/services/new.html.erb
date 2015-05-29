@@ -23,8 +23,18 @@
     </div>
 
     <div>
+        <%= f.label :text %>
+        <%= f.text_area :text %>
+    </div>
+
+    <div>
         <%= f.label :category_id %>
         <%= f.text_field :category_id %>
+    </div>
+
+    <div>
+        <%= f.label :seller_id %>
+        <%= f.text_field :seller_id %>
     </div>
 
     <%= f.submit "Add new service!" %>
