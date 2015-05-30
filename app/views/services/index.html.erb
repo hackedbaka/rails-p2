@@ -7,7 +7,7 @@
         <li>Service Description: <%= service.description %></li>
         <li>Service Cost: <%= number_to_currency(service.price, :precision => 2) %></li>
         <li>Seller ID: <%= service.seller_id %></li>
-        <li>Service Category: <%= service.category_id %></li>
+        <li>Service Category: <%= service.category.name %></li>
         <p></p>
         <p><%= link_to "More info", service_path(service) %></p>
         
