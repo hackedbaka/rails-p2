@@ -7,6 +7,7 @@ class ServicesController < ApplicationController
 	def show
 		@service = Service.find(params[:id])
     @category = @service.category
+    @seller = @service.seller
 	end
 
 	def new

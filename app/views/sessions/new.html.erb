@@ -1,0 +1,16 @@
+<%= form_for @seller, url: create_session_path do |f| %>
+
+    <% flash.each do |key,value|  %>
+        <div class="<%= key %>" > <%= value %> </div>
+    <% end %>
+	
+    <p><%= f.label :email %>
+    <%= f.email_field :email %></p>
+
+    <p><%= f.label :password %>
+    <%= f.password_field :password %></p>
+
+    <p><%= f.submit "Login" %></p>
+<% end %>
+
+<p><%= link_to "Back to services list", services_path%></p>

@@ -3,15 +3,15 @@
 one:
   name: MyString
   email: MyString
-  login_name: MyString
-  password: MyString
   contact: MyString
-  service_id: MyString
+  username: MyString
+  password_digest: MyString
+  service_id: 1
 
 two:
   name: MyString
   email: MyString
-  login_name: MyString
-  password: MyString
   contact: MyString
-  service_id: MyString
+  username: MyString
+  password_digest: MyString
+  service_id: 1

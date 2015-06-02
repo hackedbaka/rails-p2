@@ -1,4 +1,11 @@
-<h1>Your Service List</h1>
+
+<h1>
+<% if current_seller  %>
+Your 
+<%else%>
+The
+<%end%>
+Service List</h1>
 
 <ul>
     <% @services.each do |service| %>
@@ -13,6 +20,7 @@
         
     <% end %>
 </ul>
-
+<% if current_seller  %>
 <p><%= link_to "Make a new service", new_service_path%></p>
+<%end%>
 <p><%= link_to "Link To Categories", categories_path%></p>

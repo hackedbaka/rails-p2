@@ -1,12 +1,23 @@
 Rails.application.routes.draw do
-  resources :services, :categories
+  resources :services, :categories, :sellers
+  
+  root 'sellers#index'
+  # get 'sellers/new' => 'sellers#new', as: :new_seller
+  #a route to post our user from to
+  post '/' => 'sellers#create'
+
+  get 'sessions/new' => 'sessions#new', as: :new_session
+  #create a new session (this is the login post)
+  post 'sessions/new' => 'sessions#create', as: :create_session
+  get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # get "services/" => "services#index"
 
   # You can have the root of your site routed with "root"
-  root 'services#index'
+  # root 'services#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

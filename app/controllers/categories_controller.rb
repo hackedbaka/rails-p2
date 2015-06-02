@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-
+  before_action :authorize
 	def index
 		@categories = Category.all
 	end
@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 	def show
 		@category = Category.find(params[:id])
     @services = @category.services
+     
 	end
 
 	def new
