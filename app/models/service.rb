@@ -3,6 +3,6 @@ class Service < ActiveRecord::Base
 	belongs_to :seller, inverse_of: :services
 	
 	def self.search(query)
-  		where("name like ?", "%#{query}%") 
+  		where("name ILIKE ?", "%#{query}%") 
 	end
 end
