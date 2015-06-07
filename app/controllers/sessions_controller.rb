@@ -1,7 +1,4 @@
 class SessionsController < ApplicationController
-		
-	def index
-	end
 
 	def new
       @seller = Seller.new
@@ -12,7 +9,7 @@ class SessionsController < ApplicationController
 
         if seller && seller.authenticate(seller_params[:password])
           session[:seller_id] = seller.id
-
+         
           flash[:success] = 'you are signed in!'
           redirect_to sellers_path
         else

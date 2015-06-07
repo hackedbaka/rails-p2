@@ -1,13 +1,30 @@
 Rails.application.routes.draw do
-  resources :services, :categories, :sellers
+  # resources :services, :categories, :sellers
   
   root 'sellers#index'
-  # get 'sellers/new' => 'sellers#new', as: :new_seller
-  #a route to post our user from to
-  post '/' => 'sellers#create'
+ 
+  get 'services/' => 'services#index'
+  get 'my_services/' => 'services#my_index', as: :my_services
+  post 'services/' => 'services#create'
+  get 'services/new' => 'services#new', as: :new_service
+  get 'services/:id' => 'services#show',as: :service
+  get 'services/:id/edit' => 'services#edit',as: :edit_service
+  patch 'services/:id' => 'services#update'
+  delete 'services/:id' => 'services#destroy'
+
+  get 'categories/' => 'categories#index'
+  post 'categories/' => 'categories#create'
+  get 'categories/new' => 'categories#new', as: :new_category
+  get 'categories/:id' => 'categories#show',as: :category
+  get 'categories/:id/edit' => 'categories#edit',as: :edit_category
+  patch 'categories/:id' => 'categories#update'
+  delete 'categories/:id' => 'categories#destroy'
+
+  get 'sellers/' => 'sellers#index'
+  post 'sellers/' => 'sellers#create'
+  get 'sellers/new' => 'sellers#new', as: :new_seller
 
   get 'sessions/new' => 'sessions#new', as: :new_session
-  #create a new session (this is the login post)
   post 'sessions/new' => 'sessions#create', as: :create_session
   get 'sessions/destroy' => 'sessions#destroy', as: :destroy_session 
 

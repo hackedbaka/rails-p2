@@ -1,26 +1,24 @@
+<%=render 'layouts/nav_bar'%>
+<h1>The Service List</h1>
 
-<h1>
-<% if current_seller  %>
-Your 
-<%else%>
-The
-<%end%>
-Service List</h1>
+<%= form_tag(services_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Services" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
 
-<ul>
+<div class="row">
     <% @services.each do |service| %>
-        <li>Service Id: <%= service.id %></li>
-        <li>Service Name: <%= service.name %></li>
-        <li>Service Description: <%= service.description %></li>
-        <li>Service Cost: <%= number_to_currency(service.price, :precision => 2) %></li>
-        <li>Seller ID: <%= service.seller_id %></li>
-        <li>Service Category: <%= service.category.name %></li>
-        <p></p>
-        <p><%= link_to "More info", service_path(service) %></p>
-        
-    <% end %>
-</ul>
-<% if current_seller  %>
-<p><%= link_to "Make a new service", new_service_path%></p>
-<%end%>
-<p><%= link_to "Link To Categories", categories_path%></p>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <div class="caption">
+                    <p><%=service.id%></p> 
+                    <p><%=service.name%></p>
+                    <%= image_tag(service.picture, :class => 'thumb')%>
+                    <p><%=service.description%></p>
+                    <p><%= number_to_currency(service.price, :precision => 2) %></p>
+                    <p><%= link_to "More info", service_path(service) %></p>
+                </div>
+            </div>
+        </div>
+    <%end%>
+</div>

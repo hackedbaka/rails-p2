@@ -1,15 +1,24 @@
-<h1>Home Page</h1>
+<%=render 'layouts/nav_bar'%>
+
+<h1>Welcome To Servicelist</h1>
+
 
 <% flash.each do |key,value|  %>
     <div class="<%= key %>" > <%= value %> </div>
 <% end %>
+<div>
+<%= button_to "Register", new_seller_path,
+      :class => "btn btn-default", :method => :get %>
+	<% if current_seller  %>
+	<%= button_to "Logout", destroy_session_path,
+      :class => "btn btn-default", :method => :get %>
+	<% else %>
+	<%= button_to "Login", new_session_path,
+      :class => "btn btn-default", :method => :get %>
+	<% end %>
+</div>
+<div>
+    <h2>We are here to serve you...maybe</h2>
+    <%= image_tag ("service.jpg"), :class => 'service'%>
+</div>
 
-<%= link_to "Register", new_seller_path  %>
-
-<% if current_seller  %>
-  <%= link_to "Logout", destroy_session_path %>
-<% else %>
-    <%= link_to "Login", new_session_path %>
-<% end %>
-
-<p><%= link_to "To services list", services_path%></p>

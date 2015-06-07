@@ -1,8 +1,18 @@
 class ServicesController < ApplicationController
 
 	def index
-		@services = Service.all
+		# @services = Service.all
+    # @service1 = @services.sort_by {|obj| obj.created_at }.reverse
+    if params[:search]
+      @services = Service.search(params[:search]).order("created_at DESC")
+    else
+      @services = Service.all.order('created_at DESC')
+    end
 	end
+
+  def my_index
+    @services = Service.all
+  end
 
 	def show
 		@service = Service.find(params[:id])
@@ -12,12 +22,14 @@ class ServicesController < ApplicationController
 
 	def new
   		@service = Service.new
+      @categories = Category.all
 	end
 
 	def edit
   		@service = Service.find(params[:id])
-	
+      @categories = Category.all	
   end
+  
   def create
     @service = Service.new(service_params) 
 

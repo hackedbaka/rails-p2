@@ -1,3 +1,4 @@
+<%=render 'layouts/nav_bar'%>
 <%= form_for @seller, url: create_session_path do |f| %>
 
     <% flash.each do |key,value|  %>
@@ -13,4 +14,4 @@
     <p><%= f.submit "Login" %></p>
 <% end %>
 
-<p><%= link_to "Back to services list", services_path%></p>
+<p><%= link_to "Need To Register?", sellers_path%></p>

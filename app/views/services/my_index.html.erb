@@ -1,0 +1,34 @@
+<%=render 'layouts/nav_bar'%>
+<h1>My Service List</h1>
+
+<ul>   
+    <% @services.each do |service| %>
+
+        <%if current_seller == nil%> 
+
+        <%else%> 
+
+         <%if service.seller_id == current_seller.id%>
+            <li>Service Id: <%= service.id %></li>
+            <li>Service Name: <%= service.name %></li>
+            <li>Service Description: <%= service.description %></li>
+            <li>Service Cost: <%= number_to_currency(service.price, :precision => 2) %></li>
+            <li>Seller ID: <%= service.seller.username %></li>
+            <li>Service Category: <%= service.category.name %></li>
+            <p></p>
+            <p><%= link_to "More info", service_path(service) %></p>
+            <%end%>
+        <%end%>
+    <% end %>
+</ul>
+
+<%if current_seller == nil%> 
+    Log in to see or create your list
+<%end%>
+
+<% if current_seller  %>
+<p><%= link_to "Make a new service", new_service_path%></p>
+<%else%>
+<p><%= link_to "Register", sellers_path%></p>
+<%end%>
+    
