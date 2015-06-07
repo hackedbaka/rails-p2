@@ -16,7 +16,7 @@
             <li>Seller ID: <%= service.seller.username %></li>
             <li>Service Category: <%= service.category.name %></li>
             <p></p>
-            <p><%= link_to "More info", service_path(service) %></p>
+            <p><%= button_to "More info", service_path(service), :class => "btn btn-default", :method => :get %></p>
             <%end%>
         <%end%>
     <% end %>
@@ -27,8 +27,8 @@
 <%end%>
 
 <% if current_seller  %>
-<p><%= link_to "Make a new service", new_service_path%></p>
+    <p><%= button_to "Edit this service", new_service_path, :class => "btn btn-default", :method => :get %></p>
 <%else%>
-<p><%= link_to "Register", sellers_path%></p>
+    <p><%= button_to "Register", sellers_path, :class => "btn btn-default", :method => :get %></p>
 <%end%>
     

@@ -14,8 +14,8 @@
                     <p><%=service.id%></p> 
                     <p><%=service.name%></p>
                     <%= image_tag(service.picture, :class => 'thumb')%>
-                    <p><%=service.description%></p>
-                    <p><%= number_to_currency(service.price, :precision => 2) %></p>
+                    <p>What I do: <%=service.description%></p>
+                    <p>I'm poor, gimme: <%= number_to_currency(service.price, :precision => 2) %></p>
                     <p><%= link_to "More info", service_path(service) %></p>
                 </div>
             </div>

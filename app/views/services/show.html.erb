@@ -1,7 +1,7 @@
 <%=render 'layouts/nav_bar'%>
 <h1> <%= @service.name %> </h1>
 
-
+<p>Category: <%=@category.name%></p>
 <p>What I do:  <%= @service.description %></p> 
 <p>I'm poor, gimme:  <%= number_to_currency(@service.price, :precision => 2)%></p>
 
@@ -14,7 +14,7 @@
 <%if current_seller == nil%>
 <%else%>
 	<%if @service.seller_id == current_seller.id%>
-	<%= link_to "Edit this service!", edit_service_path(@service) %>
-	<%= link_to "Delete this service!", :service, method: :delete, data: { confirm: "Are you sure you want to delete this service?"} %>
+		<%= button_to "Edit this service", edit_service_path(@service), :class => "btn btn-default", :method => :get %>
+		<%= button_to "Delete this service", :service, method: :delete, data: { confirm: "Are you sure you want to delete this service?"}, :class => "btn btn-default", :method => :get %>
 	<%end%>
 <%end%>

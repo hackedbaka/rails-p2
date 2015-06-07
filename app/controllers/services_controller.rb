@@ -1,7 +1,9 @@
 class ServicesController < ApplicationController
 
 	def index
+
 		# @services = Service.all
+    
     # @service1 = @services.sort_by {|obj| obj.created_at }.reverse
     if params[:search]
       @services = Service.search(params[:search]).order("created_at DESC")

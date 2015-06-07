@@ -4,33 +4,33 @@
 <%= form_for @service do |f| %>
 
     <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <p><%= f.label :name %></p>
+        <p><%= f.text_field :name %></p>
     </div>
 
     <div class="form-group">
-        <%= f.label :description %>
-        <%= f.text_field :description %>
+        <p><%= f.label :description %></p>
+        <p><%= f.text_field :description %></p>
     </div>
 
     <div class="form-group">
-        <%= f.label :picture %>
-        <%= f.text_field :picture %>
+        <p><%= f.label :picture %></p>
+        <p><%= f.text_field :picture %></p>
     </div>
 
     <div class="form-group">
-        <%= f.label :price %>
-        <%= f.text_field :price %>
+        <p><%= f.label :price %></p>
+        <p><%= f.text_field :price %></p>
     </div>
 
     <div class="form-group">
-        <%= f.label :text %>
-        <%= f.text_area :text %>
+        <p><%= f.label :text %></p>
+        <p><%= f.text_area :text , size: "50x10" %></p>
     </div>
 
     <div class="form-group">
-        <%= f.label :category_id, "category" %>
-        <%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name)%>
+        <p><%= f.label :category_id, "category" %></p>
+        <p><%= f.select :category_id, options_from_collection_for_select(@categories, :id, :name)%></p>
     </div>
     <%if current_seller%>
     <div class="form-group">

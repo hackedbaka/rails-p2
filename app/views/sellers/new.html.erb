@@ -1,35 +1,36 @@
 <%=render 'layouts/nav_bar'%>
-    <%= form_for(@seller) do |f| %>
+<%= form_for(@seller) do |f| %>
 
       <% flash.each do |key,value|  %>
         <div class="<%= key %>" > <%= value %> </div>
       <% end %>
+
       <div class="form-group">
-      <%= f.label :name%>
-      <%= f.text_field :name%>
+            <p><%= f.label :name%></p>
+            <p><%= f.text_field :name%></p>
       </div>
       <div class="form-group">
-      <%= f.label :username%>
-      <%= f.text_field :username%>
+            <p><%= f.label :username%></p>
+            <p><%= f.text_field :username%></p>
       </div>
       <div class="form-group">
-      <%= f.label :contact%>
-      <%= f.telephone_field :contact%>
+            <p><%= f.label :contact%></p>
+            <p><%= f.telephone_field :contact%></p>
       </div>
       <div class="form-group">
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+            <p><%= f.label :email %></p>
+            <p><%= f.email_field :email %></p>
       </div>
       <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+            <p><%= f.label :password %></p>
+            <p><%= f.password_field :password %></p>
       </div>
       <div class="form-group">
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+            <p><%= f.label :password_confirmation, "Confirmation" %></p>
+            <p><%= f.password_field :password_confirmation %></p>
       </div>
       <div class="form-group">
-      <%= f.submit "Signup" %>
+            <%= f.submit "Signup" %>
       </div>
       
-    <% end %>
+<% end %>

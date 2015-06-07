@@ -4,13 +4,13 @@
 <%= form_for @category do |f| %>
 
     <div class="form-group">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <p><%= f.label :name %></p>
+        <p><%= f.text_field :name %></p>
     </div>
 
     <div class="form-group">
-        <%= f.label :description %>
-        <%= f.text_field :description %>
+        <p><%= f.label :description %></p>
+        <p><%= f.text_field :description %></p>
     </div>
 
     <%= f.submit "Add new category!" %>

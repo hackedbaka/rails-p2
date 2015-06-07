@@ -7,13 +7,13 @@
     <div class="<%= key %>" > <%= value %> </div>
 <% end %>
 <div>
-<%= button_to "Register", new_seller_path,
+  <%= button_to "Register", new_seller_path,
       :class => "btn btn-default", :method => :get %>
 	<% if current_seller  %>
-	<%= button_to "Logout", destroy_session_path,
+	 <%= button_to "Logout", destroy_session_path,
       :class => "btn btn-default", :method => :get %>
 	<% else %>
-	<%= button_to "Login", new_session_path,
+	 <%= button_to "Login", new_session_path,
       :class => "btn btn-default", :method => :get %>
 	<% end %>
 </div>
