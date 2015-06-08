@@ -27,7 +27,7 @@
 <%end%>
 
 <% if current_seller  %>
-    <p><%= button_to "Edit this service", new_service_path, :class => "btn btn-default", :method => :get %></p>
+    <p><%= button_to "Add a service", new_service_path, :class => "btn btn-default", :method => :get %></p>
 <%else%>
     <p><%= button_to "Register", sellers_path, :class => "btn btn-default", :method => :get %></p>
 <%end%>
