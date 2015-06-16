@@ -15,17 +15,17 @@ RSpec.describe SellersController, :type => :controller do
 		expect(response).to render_template(:new)
 	end
 
-	# it "new creates a new seller" do
- #    	get :new
+	it "new creates a new seller" do
+    	get :new
 
- #    	# expect(assigns(:seller)).to be_a_new(Seller)
- #  	end
+    	# expect(assigns(:seller)).to be_a_new(Seller)
+  	end
 
-  	# subject { post :create, :seller => { :password => "" } }
-  	# it "if invalid use redirect" do
+  	subject { post :create, :seller => { :password => "" } }
+  	it "if invalid use redirect" do
   	  		
-  	#   	expect(subject).to redirect_to(new_seller_path)
+  	  	expect(subject).to redirect_to(new_seller_path)
 
-  	# end
+  	end
 
 end
