@@ -4,29 +4,49 @@
       "/Users/hackedbaka/fundamentals/rails-p2/servicelist/app/models/seller.rb": [
         1,
         null,
-        0,
+        1,
         null,
-        0,
+        1,
         null,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         null,
-        0,
-        0,
+        1,
+        1,
         null,
         null,
-        0,
+        1,
         null,
-        0,
+        1,
         0,
         0,
         0,
         null,
         null,
         null
+      ],
+      "/Users/hackedbaka/fundamentals/rails-p2/servicelist/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hackedbaka/fundamentals/rails-p2/servicelist/app/helpers/categories_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hackedbaka/fundamentals/rails-p2/servicelist/app/helpers/sellers_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hackedbaka/fundamentals/rails-p2/servicelist/app/helpers/services_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/hackedbaka/fundamentals/rails-p2/servicelist/app/helpers/sessions_helper.rb": [
+        1,
+        null
       ]
     },
-    "timestamp": 1434475056
+    "timestamp": 1434477236
   }
 }
