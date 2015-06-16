@@ -1,11 +1,18 @@
 language: ruby
 rvm:
-  - 2.0.0-p481
+- 2.0.0-p481
 branches:
   only:
-    - master
+  - master
 install:
-  - "travis_retry bundle install"  
-
+- travis_retry bundle install
 before_script:
-  - psql -c 'create database servicelist_test;' -U postgres
+- psql -c 'create database servicelist_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: MEhSFi4CyIT7A6d4OkFCZnevkyH3IbB4zQqt/gnKbP1DNEO4laz4U74v+dgVr2LuWkVBc3D938L57xdzf/KIMUh3IgLu9E7S6nEcwAO+4NgypFDnIXR2meHAIfore+f+5Y4MCjv+sytrJwfyO/DUd0bvYxgU2Q0ihCrAxgvmAn1FgZ2013O1gR2sEWNU1shF1Bd/6H31Tlu2x/ndyiYnWKlKUiBghmzIKIe6XOPHokH+njiJz1ulAdWbAkb4RM1mAqI+UFipC9ZBkZIEedwTjF8TrExFX3TPYozIbUWy+W1/m0DXAGMwg+qryYp+GOXxVILSNOulM/DS/fGuumxs6Y1StvbSqtfnLIS7wnuFsF5z06NcZgbgi2t/EI4ZMjAFRgqYBgKu/QIpgLcRJjWLBVboU9Er7pWMMOJWHFeierCJZjw9a6BovdAD9cvnRTdUF7AiL3nrmvGJcMiEkD08+oFArM1MUTi19sgiXQem/VRgB2yXsT+7+Bu45Nqv14IdQYcORznBEHfIdNJ5nPy3mA22zx7B0N6qQ/X7SUN3Rr86avX54zCGRfWtrghUl+iOmo+7/8O5Qx8gSWCYXoAHMkKr+g2mN0ae/UTOg8Q+t+CnjeYYXNLychI8Q3/1sswBG7GlhF/wnFGU9PLpxSaPg2KZr/MTXp6rm+9It2ZA2AE=
+app: servicelist
+  run:
+    - "rake db:migrate"
+    - restart
