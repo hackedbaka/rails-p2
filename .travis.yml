@@ -8,4 +8,4 @@ install:
   - "travis_retry bundle install"  
 
 before_script:
-  - psql -c 'create database servicelist_test;' -U postgres
+  - psql -c 'create database servicelist_test;' -U hackedbaka
